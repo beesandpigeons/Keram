@@ -5,40 +5,58 @@
   <title>Keram - Nasiona Otoczkowane</title>
   <style>
     .naglowek {
-      margin: 0 auto;
-      padding: 0;
       background-color: #1b5e5e;
+      overflow: hidden;
+      padding: 25px;
+      font-size: 15px;
+      
     }
 
     .ikona {
       display: block;
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 55px;
     }
 
-    .strony {
-      display: inline;
-      align-items: center;
+    .header-right{
+      float: right;
+    }
+
+    .header-left {
+      float: left;
+    }
+
+    .naglowek a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .naglowek a:hover {
+      background-color: white;
+      color: #1b5e5e;
+      padding: 10px;
     }
   </style>
 
 </head>
 <body>
-  <header class="naglowek">
+  <div class="naglowek">
       <img class="ikona" src="logo.png" width="120">
-      <div class="strony">
-        <ul class="strony_lista">
-          <button>Główna</button>
-          <button>Sklep</button>
-          <button>O nas</button>
-          <button>Usługi</button>
-          <button>Żwirkot</button>
-          <button>Nasiona</button>
-          <button>Kontakt</button>
-        </ul>
+      <div class="header-left">
+        <a href="#home">GŁÓWNA</a>
+        <a class="active" href="#sklep">SKLEP</a>
+        <a href="#onas">O NAS</a>
+        <a href="#nasiona">NASIONA</a>
+        <a href="#żwirkot">ŻWIRKOT</a>
+        <a href="#uslugi">USŁUGI</a>
+        <a href="#kontakt">KONTAKT</a>
       </div>
-      <div class="pozostale">
-
+      <div class="header-right">
+        <a href="#koszyk">KOSZYK</a>
+        <a href="#regulamin">REGULAMIN SKLEPU</a>
+        <a href="#polityka">POLITYKA PRYWATNOŚCI</a>
       </div>
   </header>
 </body>
