@@ -53,6 +53,7 @@
     .produkty {
       display: grid;
       grid-template-columns: auto auto auto auto;
+      overflow: hidden;
     }
 
     .produkty figure {
@@ -66,6 +67,29 @@
       color: #1b5e5e;
     }
 
+    .filterDiv {
+      display: none;
+    }
+
+    .show {
+      display: flexbox;
+    }
+
+    .filtrowanie {
+      width: 40px;
+      margin-top: 60px;
+      margin-left: 10px;
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      background: none;
+      text-align: left;
+      color: rgb(93, 93, 93);
+      padding: 10px;
+    }
+
     .produkty img {
       border-radius: 15px;
       width: 100%;
@@ -75,10 +99,15 @@
       float: left;
     }
 
-    .footer {
+    footer {
       background-color: #1b5e5e;
       padding: 10px;
     }
+    .footer-text {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+    
   </style>
 
 </head>
@@ -99,107 +128,118 @@
         <input type="text" placeholder="Wyszukaj...">
       </div>
   </div>
+
+  <div class="filtrowanie">
+    <button class="btn active" onclick="filterSelection('all')">Wszystkie produkty</button>
+    <button class="btn" onclick="filterSelection('nasiona')">Nasiona otoczkowane</button>
+    <button class="btn" onclick="filterSelection('żwirkot')">Żwirkot</button>
+    <button class="btn" onclick="filterSelection('wypełniacz')">Wypełniacz</button>
+  </div>
+
   <div class="feed">
     <div class="produkty">
-      <figure>
-          <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-          <h5>Seler korzeniowy TORPEDO F1</h5>
-          <p> 1.00 zł </p>
+      <figure class="filterDiv nasiona">
+        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
+        <h5>Seler korzeniowy TORPEDO F1</h5>
+        <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy REX</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy PRINZ</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy ELENA F1</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy DIAMANT F1</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy BRILLIANT</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy BALENA F1</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy ASTERIX F1</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy ALPHA</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv żwirkot">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/12/zwirkot-10L-768x768.jpg">
         <h5>Żwirek 2,5kg/10l</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv żwirkot">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/12/zwirkot-10L-768x768.jpg">
         <h5>Żwirek 5kg/20l</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv żwirkot">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/12/zwirkot-10L-768x768.jpg">
         <h5>Żwirek 10kg/40l</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv wypełniacz">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2023/04/pufsako_05-400x400.jpg">
         <h5>Wypełniacz naturalny z zapachem 5kg</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv wypełniacz">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/03/pufsako_07-400x400.jpg">
         <h5>Wypełniacz naturalny 5kg</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv wypełniacz">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2023/04/blue_04-400x400.jpg">
         <h5>Wypełniacz naturalny kolorowy 5kg</h5>
         <p> 1.00 zł </p>
       </figure>
-      <figure>
+      <figure class="filterDiv wypełniacz">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2023/04/color_01-400x400.jpg">
         <h5>Wypełniacz naturalny z zapachem kolorowy 5kg</h5>
         <p> 1.00 zł </p>
       </figure>
     </div>
   </div>
+
   <footer>
-    <div class="kontakt">
-      <p>info@keram-biz</p>
-      <p>+48 447 146 987</p>
-      <p>+48 502 395 459</p>
-    </div>
-    <div class="strony-footer">
-      <a href="#home">GŁÓWNA</a>
-        <a class="active" href="#sklep">SKLEP</a>
-        <a href="#onas">O NAS</a>
-        <a href="#nasiona">NASIONA</a>
-        <a href="#żwirkot">ŻWIRKOT</a>
-        <a href="#uslugi">USŁUGI</a>
-        <a href="#kontakt">KONTAKT</a>
-    </div>
-    <div class="copyright">
-      <p>Copyright © 2025 - KERAM</p>
+    <div class="footer-text">
+      <div class="kontakt">
+        <p>info@keram-biz</p>
+        <p>+48 447 146 987</p>
+        <p>+48 502 395 459</p>
+      </div>
+      <div class="strony-footer">
+        <a href="#home">GŁÓWNA</a>
+          <a class="active" href="#sklep">SKLEP</a>
+          <a href="#onas">O NAS</a>
+          <a href="#nasiona">NASIONA</a>
+          <a href="#żwirkot">ŻWIRKOT</a>
+          <a href="#uslugi">USŁUGI</a>
+          <a href="#kontakt">KONTAKT</a>
+      </div>
+      <div class="copyright">
+        <p>Copyright © 2025 - KERAM</p>
+      </div>
     </div>
   </footer>
 </body>
