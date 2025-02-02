@@ -38,15 +38,37 @@
         padding: 10px;
       }
   
+      .feed {
+        
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top: 8%;
+  
+      }
+  
+      .produkty {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+  
       .produkty figure {
-        margin-left: 10%;
-        margin-right: 10%;
-        width: 10%;
+        width: 15%;
         font-size: 20px;
         display: flexbox;
         background-color: rgba(217, 215, 215, 0.541);
-        padding: 40px;
+        border-radius: 25px;
+        padding: 35%;
         text-align: center;
+        color: #1b5e5e;
+      }
+  
+      .produkty img {
+        border-radius: 15px;
+        width: 100%;
+      }
+      
+      .produkty ul {
+        float: left;
       }
     </style>
   
@@ -69,11 +91,27 @@
         </div>
     </div>
     <div class="feed">
-      <ul class="produkty">
+      <div class="produkty">
+        <figure>
+            <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
+            <h5>Seler korzeniowy TORPEDO F1</h5>
+            <p> 1.00 zł </p>
+        </figure>
         <figure>
           <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-          <p>Seler korzeniowy TORPEDO F1</p>
+          <h5>Seler korzeniowy TORPEDO F1</h5>
+          <p> 1.00 zł </p>
         </figure>
-      </ul>
+        <figure>
+          <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
+          <h5>Seler korzeniowy TORPEDO F1</h5>
+          <p> 1.00 zł </p>
+        </figure>
+        <figure>
+          <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
+          <h5>Seler korzeniowy TORPEDO F1</h5>
+          <p> 1.00 zł </p>
+        </figure>
+      </div>
     </div>
   </body>
