@@ -8,12 +8,21 @@
       font-family: Ruda, sans-serif;
       font-weight: 400;
     }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+     a:hover {
+      color: #e5e388;
+    }
+
     .naglowek {
       background-color: #1b5e5e;
       overflow: hidden;
       padding: 25px;
       font-size: 15px;
-      
     }
 
     .ikona {
@@ -32,13 +41,6 @@
     }
 
     .naglowek a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-    }
-
-    .naglowek a:hover {
-      color: #e5e388;
       padding: 10px;
     }
 
@@ -72,7 +74,7 @@
     }
 
     .show {
-      display: flexbox;
+      display: block;
     }
 
     .filtrowanie {
@@ -90,6 +92,10 @@
       padding: 10px;
     }
 
+    .btn:hover {
+      color: darkgray;
+    }
+
     .produkty img {
       border-radius: 15px;
       width: 100%;
@@ -103,10 +109,14 @@
       background-color: #1b5e5e;
       padding: 10px;
     }
+
     .footer-text {
       display: grid;
       grid-template-columns: auto auto auto;
+      padding: 20px;
+      color: white;
     }
+    
     
   </style>
 
@@ -137,7 +147,7 @@
   </div>
 
   <div class="feed">
-    <div class="produkty">
+    <li class="produkty">
       <figure class="filterDiv nasiona">
         <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
         <h5>Seler korzeniowy TORPEDO F1</h5>
@@ -218,8 +228,53 @@
         <h5>Wypełniacz naturalny z zapachem kolorowy 5kg</h5>
         <p> 1.00 zł </p>
       </figure>
-    </div>
+    </li>
   </div>
+
+  <script>
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filterDiv");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+    
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+    
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+    
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
 
   <footer>
     <div class="footer-text">
