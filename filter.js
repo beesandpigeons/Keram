@@ -1,4 +1,3 @@
-    filterSelection("all")
     function filterSelection(c) {
       var x, i;
       x = document.getElementsByClassName("filterDiv");
@@ -8,6 +7,7 @@
         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
       }
     }
+    filterSelection("all")
     
     function w3AddClass(element, name) {
       var i, arr1, arr2;
