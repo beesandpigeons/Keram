@@ -3,110 +3,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
   <!-- <meta name="robots" content="noindex, nofollow"> -->
   <title>Keram - Nasiona Otoczkowane</title>
-  <style>
-    body {
-      font-family: Ruda, sans-serif;
-      font-weight: 400;
-    }
+    <style>
+      body {
+        font-family: Ruda, sans-serif;
+        font-weight: 400;
+      }
 
-    a {
-      color: white;
-      text-decoration: none;
-    }
+      a {
+        color: white;
+        text-decoration: none;
+      }
 
-     a:hover {
-      color: #e5e388;
-    }
+      a:hover {
+        color: #e5e388;
+      }
 
-    .naglowek {
-      background-color: #1b5e5e;
-      overflow: hidden;
-      padding: 25px;
-      font-size: 15px;
-    }
+      .naglowek {
+        background-color: #1b5e5e;
+        overflow: hidden;
+        padding: 25px;
+        font-size: 15px;
+      }
 
-    .ikona {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 55px;
-    }
+      .ikona {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 55px;
+      }
 
-    .header-right{
-      float: right;
-    }
+      .header-right{
+        float: right;
+      }
 
-    .header-left {
-      float: left;
-    }
+      .header-left {
+        float: left;
+      }
 
-    .naglowek a {
-      padding: 10px;
-    }
+      .naglowek a {
+        padding: 10px;
+      }
 
-    .feed {
-      margin-left: 8%;
-      margin-right: 8%;
-    }
+      .header-img {
+        width: 100%;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+      }
 
-    .produkty {
-      display: grid;
-      grid-template-columns: auto auto auto auto;
-      overflow: hidden;
-    }
+      .ikonki {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        margin-right: 5%;
+        margin-left: 5%;
+      }
 
-    .produkty figure {
-      width: 120px;
-      font-size: 20px;
-      display: flexbox;
-      background-color: rgba(217, 215, 215, 0.541);
-      border-radius: 25px;
-      padding: 30px;
-      text-align: center;
-      color: #1b5e5e;
-    }
+      .ikonki div {
+        width: 45%;
+        
+      }
 
+      footer {
+        background-color: #1b5e5e;
+        padding: 10px;
+      }
 
-    .btnContainer {
-      width: fit-content;
-      margin-top: 10px;
-      margin-left: 10px;
-      margin-right: 0;
-    }
-
-    .btn {
-      border: none;
-      outline: none;
-      background: none;
-      text-align: left;
-      color: rgb(93, 93, 93);
-      padding: 10px;
-    }
-
-    .btn:hover {
-      color: darkgray;
-    }
-
-    .produkty img {
-      border-radius: 15px;
-      width: 100%;
-    }
-    
-
-    footer {
-      background-color: #1b5e5e;
-      padding: 10px;
-    }
-
-    .footer-text {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      padding: 20px;
-      color: white;
-    }
-    
-    
-  </style>
+      .footer-text {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 20px;
+        color: white;
+      }
+    </style>
 
 </head>
 <body>
@@ -127,141 +94,105 @@
       </div>
   </div>
 
-  <div class="btnContainer">
-    <button class="btn active" onclick="filterSelection('all')">Wszystkie produkty</button>
-    <button class="btn" onclick="filterSelection('nasiona')">Nasiona otoczkowane</button>
-    <button class="btn" onclick="filterSelection('żwirkot')">Żwirkot</button>
-    <button class="btn" onclick="filterSelection('wypełniacz')">Wypełniacz</button>
-  </div>
-
-  <script>
-    function filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("filterDiv");
-      if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-      }
-    }
-    filterSelection("all")
-    
-    function w3AddClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-      }
-    }
-    
-    function w3RemoveClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);     
-        }
-      }
-      element.className = arr1.join(" ");
-    }
-    
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function(){
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
-  </script>
-
-  <div class="feed">
-    <div class="produkty">
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy TORPEDO F1</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy REX</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy PRINZ</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy ELENA F1</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy DIAMANT F1</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy BRILLIANT</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy BALENA F1</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy ASTERIX F1</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv nasiona">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/02/F1A9302-400x400.jpg">
-        <h5>Seler korzeniowy ALPHA</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv żwirkot">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/12/zwirkot-10L-768x768.jpg">
-        <h5>Żwirek 2,5kg/10l</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv żwirkot">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/12/zwirkot-10L-768x768.jpg">
-        <h5>Żwirek 5kg/20l</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv żwirkot">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/12/zwirkot-10L-768x768.jpg">
-        <h5>Żwirek 10kg/40l</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv wypełniacz">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2023/04/pufsako_05-400x400.jpg">
-        <h5>Wypełniacz naturalny z zapachem 5kg</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv wypełniacz">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2024/03/pufsako_07-400x400.jpg">
-        <h5>Wypełniacz naturalny 5kg</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv wypełniacz">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2023/04/blue_04-400x400.jpg">
-        <h5>Wypełniacz naturalny kolorowy 5kg</h5>
-        <p> 1.00 zł </p>
-      </figure>
-      <figure class="filterDiv wypełniacz">
-        <img src="https://keram-sklep.cfolks.pl/wp-content/uploads/2023/04/color_01-400x400.jpg">
-        <h5>Wypełniacz naturalny z zapachem kolorowy 5kg</h5>
-        <p> 1.00 zł </p>
-      </figure>
+  <div class="main">
+    <img class="header-img" src="https://keram.biz/wp-content/uploads/2023/03/30-lat-zsw-bez-textu-1do4.jpg">
+    <br>
+    <h1>Otoczkowanie nasion</h1>
+    <div class="ikonki">
+      <div>
+        <p>
+          <a href="tel:+48502395459" target="_blank"><br>
+            <img decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/phone_icon_3-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/phone_icon_3-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/phone_icon_3-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/phone_icon_3.png 300w" sizes="(max-width: 150px) 100vw, 150px">
+          </a>
+        </p>
+        <p>Zadzwoń</p>
+      </div>
+      <div>
+        <p>
+          <img loading="lazy" decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/car_icon_rl-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/car_icon_rl-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/car_icon_rl-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/car_icon_rl.png 300w" sizes="(max-width: 150px) 100vw, 150px">
+        </p>
+        <p>Odbierzemy nasiona</p>
+      </div>
+      <div>
+        <p>
+          <img loading="lazy" decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/wheel-clock_icon_2-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/wheel-clock_icon_2-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/wheel-clock_icon_2-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/wheel-clock_icon_2.png 300w" sizes="(max-width: 150px) 100vw, 150px">
+        </p>
+        <p>Realizacja zamówienia w&nbsp;15 dni </p>
+      </div>
+      <div>
+        <p>
+          <img loading="lazy" decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/car_icon_2-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/car_icon_2-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/car_icon_2-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/car_icon_2.png 300w" sizes="(max-width: 150px) 100vw, 150px">
+        </p>
+        <p>Odeślemy otoczki</p>
+        <p>
+          <img loading="lazy" decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon.png 300w" sizes="(max-width: 150px) 100vw, 150px">
+        </p>
+        <p>Satysfakcja na&nbsp;100% wschodów</p>
+      </div>
     </div>
+    <h2>O&nbsp;nas</h2>
+      <p>Spółka KERAM zajmuje się kondycjonowaniem, uszlachetnianiem oraz&nbsp;<strong>otoczkowaniem nasion</strong> roślin warzywnych i&nbsp;kwiatów od&nbsp;1988 roku. Wiele lat badań i&nbsp;doświadczeń laboratoryjnych doprowadziło nas do&nbsp;stworzenia unikalnej technologii otoczkowania nasion. Otoczkowanie nasion pozwala na&nbsp;bardziej ekonomiczne wykorzystanie materiału siewnego oraz&nbsp;ogranicza niekorzystny wpływ środowiska na&nbsp;kiełkujące rośliny. Celem naszej produkcji jest otrzymanie nasion dających wyższe plony o&nbsp;lepszej jakości.</p>
+      <p>
+        <a href="https://keram.biz/o-nas/">
+          <br>Więcej o firmie<br>
+				</a>
+      </p>
+    <h2>Przyjmujemy zamówienia na wykonanie otoczki wszystkich odmian selerów. Otoczki są frakcjonowane, pakowane  po&nbsp;10.000 szt.</h2>
+    <p>
+      <img loading="lazy" decoding="async" width="1024" height="683" src="https://keram.biz/wp-content/uploads/2024/02/seler-korzeniowy-alpha-1024x683.jpg" alt="Nasiona otoczkowane selera. Seler korzeniowy ALPHA" srcset="https://keram.biz/wp-content/uploads/2024/02/seler-korzeniowy-alpha-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2024/02/seler-korzeniowy-alpha-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2024/02/seler-korzeniowy-alpha-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2024/02/seler-korzeniowy-alpha-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2024/02/seler-korzeniowy-alpha.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px">
+    </p>
+    <h2>Oferujemy usługowe otoczkowanie nasion selera, buraka, cebuli, marchwi, pasternaku, pietruszki, pora, sałaty, bazylii, rukoli, scorzonery, begonii, lobelii oraz&nbsp;wielu innych.</h2>
+    <p>Od&nbsp;ponad trzydziestu pięciu lat, z&nbsp;sukcesem, zajmujemy się podkiełkowywaniem i&nbsp;<strong>otoczkowaniem nasion selera</strong>. Lata badań i&nbsp;doświadczeń przyczyniły się do&nbsp;stworzenia unikalnej technologii obróbki nasion selerów. Nasze otoczki selerów charakteryzują się szybkimi, wyrównanymi wschodami oraz&nbsp;obfitymi plonami.</p>
+    <h2> Nasza oferta</h2>
+    <h3>Otoczkowanie nasion</h3>
+      <p>Dotychczas współpracowaliśmy wyłącznie z&nbsp;wielkimi firmami nasiennymi, jednak duże zainteresowanie ze&nbsp;strony producentów rozsady warzyw i&nbsp;plantatorów skłoniło nas do&nbsp;przygotowania specjalnej oferty dla tej&nbsp;grupy odbiorców.</p>
+      <p>
+        <a href="https://keram.biz/nasiona" target="_blank">
+          <br>Więcej informacji<br>
+				</a>
+        <br>
+      </p>
+      <p>
+        <a href="https://keram.biz/nasiona/" target="_blank"><br>
+					<img loading="lazy" decoding="async" width="768" height="512" src="https://keram.biz/wp-content/uploads/2023/04/pasternak-2-768x512.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/04/pasternak-2-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2023/04/pasternak-2-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2023/04/pasternak-2-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2023/04/pasternak-2-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2023/04/pasternak-2.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px">
+        </a>
+      </p>
+    <h3>Kulki naturalne</h3>
+      <p>Kulki zostały wykonane ze&nbsp;składników roślinnych. Są&nbsp;przyjazne dla środowiska, lekkie, elastyczne, bezpyłowe, biodegradowalne. Nasz produkt – w&nbsp;zależności od&nbsp;wielkości – może mieć liczne zastosowania. Bardzo dobrze chłonie olej/ropę. Rozsypany na&nbsp;drodze, bezpośrednio na&nbsp;wylany olej, wchłania plamę z&nbsp;jezdni. Analogicznie wysypany na&nbsp;plamę ropy/oleju na&nbsp;wodzie pozwoli na&nbsp;rozdzielenie tych dwóch substancji wchłaniając olej/ropę. Kulki można wyłowić następnie palić,&nbsp; kompostować.</p>
+      <p>
+        <a href="https://keram.biz/kulki-naturalne/" target="_blank">
+          <br>Więcej informacji<br>
+				</a>
+        <br>
+        <img loading="lazy" decoding="async" width="768" height="512" src="https://keram.biz/wp-content/uploads/2023/03/F1A0281-768x512.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/F1A0281-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2023/03/F1A0281-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2023/03/F1A0281-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2023/03/F1A0281-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2023/03/F1A0281.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px">
+      </p>
+    <h3>Najnowsze produkty</h3>
+      <p>
+        <img loading="lazy" decoding="async" width="735" height="1024" src="https://keram.biz/wp-content/uploads/2023/06/zwirkot-735x1024.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/06/zwirkot-735x1024.jpg 735w, https://keram.biz/wp-content/uploads/2023/06/zwirkot-400x558.jpg 400w, https://keram.biz/wp-content/uploads/2023/06/zwirkot-215x300.jpg 215w, https://keram.biz/wp-content/uploads/2023/06/zwirkot-768x1071.jpg 768w, https://keram.biz/wp-content/uploads/2023/06/zwirkot-1102x1536.jpg 1102w, https://keram.biz/wp-content/uploads/2023/06/zwirkot.jpg 1426w" sizes="(max-width: 735px) 100vw, 735px">
+      </p>
+    <h3>Żwirkot</h3>
+      <p>Biodegradowalne podłoże pochodzenia roślinnego o&nbsp;naturalnym zapachu. Chłonie nieczystości oraz&nbsp;przykre zapachy w&nbsp;sposób najbardziej efektywny na&nbsp;rynku. Polecane dla wszystkich zwierząt domowych, szczególnie sprawdza się u&nbsp;kotów z&nbsp;gęstą, długą sierścią. Lekkie kulki pozostają w&nbsp;kuwecie, nie&nbsp;są&nbsp;roznoszone po&nbsp;domu na&nbsp;kocich łapkach. W&nbsp;niewielkich ilościach można je&nbsp;wyrzucać do&nbsp;toalety, palić, kompostować.</p>
+      <p>
+        <a href="https://keram.biz/kulki-dekoracyjne/"><br>
+          <img loading="lazy" decoding="async" width="1024" height="683" src="https://keram.biz/wp-content/uploads/2024/03/zwirkot_03-1024x683.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2024/03/zwirkot_03-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2024/03/zwirkot_03-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2024/03/zwirkot_03-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2024/03/zwirkot_03-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2024/03/zwirkot_03.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px">
+        </a><br>
+        <a href="https://keram.biz/kulki-dekoracyjne/"><br>
+					<img loading="lazy" decoding="async" width="1024" height="683" src="https://keram.biz/wp-content/uploads/2023/06/zwirkot_01-1024x683.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/06/zwirkot_01-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2023/06/zwirkot_01-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2023/06/zwirkot_01-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2023/06/zwirkot_01-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2023/06/zwirkot_01.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px">
+        </a>
+      </p>
+    <h3>Kulki do&nbsp;pakowania paczek</h3>
+      <p>Kulki naturalne wykorzystywane są&nbsp;m.in.&nbsp;jako wypełniacz do&nbsp;paczek, prezentów. Zabezpieczają zawartość przesyłki w&nbsp;transporcie. Użyte podczas pakowania mogą stanowić dodatkową ozdobę. Kulki mogą występować w&nbsp;różnych kolorach : czerwony, pomarańczowy, zielony, naturalny – ecru, niebieski, żółty, mix.</p>
+      <p>
+        <a href="https://keram.biz/kulki-dekoracyjne/"><br>
+          <img loading="lazy" decoding="async" width="768" height="512" src="https://keram.biz/wp-content/uploads/2023/04/yellow_01-768x512.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/04/yellow_01-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2023/04/yellow_01-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2023/04/yellow_01-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2023/04/yellow_01-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2023/04/yellow_01.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px">
+        </a><br>
+          <img loading="lazy" decoding="async" width="768" height="512" src="https://keram.biz/wp-content/uploads/2023/04/zwirkot_03-768x512.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/04/zwirkot_03-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2023/04/zwirkot_03-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2023/04/zwirkot_03-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2023/04/zwirkot_03-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2023/04/zwirkot_03.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px"><br>
+          <img loading="lazy" decoding="async" width="768" height="512" src="https://keram.biz/wp-content/uploads/2023/04/blue_05-768x512.jpg" alt="" srcset="https://keram.biz/wp-content/uploads/2023/04/blue_05-768x512.jpg 768w, https://keram.biz/wp-content/uploads/2023/04/blue_05-400x267.jpg 400w, https://keram.biz/wp-content/uploads/2023/04/blue_05-300x200.jpg 300w, https://keram.biz/wp-content/uploads/2023/04/blue_05-1024x683.jpg 1024w, https://keram.biz/wp-content/uploads/2023/04/blue_05.jpg 1200w" sizes="(max-width: 768px) 100vw, 768px">
+      </p>
+    <h2>Nasz system po&nbsp;prostu działa</h2>
+      <p>
+        <img decoding="async" src="https://keram.biz/wp-content/uploads/2023/04/kielki_06-e1681817794345.jpg" title="kielki_06" alt="kielki_06" loading="lazy">
+      </p>
   </div>
 
   <footer>
