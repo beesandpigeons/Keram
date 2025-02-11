@@ -7,6 +7,7 @@
       body {
         font-family: Ruda, sans-serif;
         font-weight: 400;
+        font-size: medium;
       }
 
       a {
@@ -53,14 +54,34 @@
       .ikonki {
         display: grid;
         grid-template-columns: auto auto auto auto auto;
-        justify-content: space-evenly;
-        margin-right: 5%;
-        margin-left: 5%;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding-top: 10px;
+        text-align: center;
+      }
+
+      .ikonki img {
+        border-radius: 25px;
+        padding-bottom: 5px;
+        
       }
 
       .ikonki div {
+        width: 150px;
         display: flexbox;
-        float: left;
+        box-sizing: border-box;
+        color: rgb(149, 148, 148);
+        text-wrap-style: balance;
+      }
+
+      .main h1 {
+        color: #1b5e5e;
+        text-align: center;
+        margin: 5%;
+      }
+
+      .tekst-gl {
+        color: #1b5e5e;
       }
 
       footer {
@@ -102,7 +123,7 @@
     <div class="ikonki">
       <div>
         <p>
-          <a href="tel:+48502395459" target="_blank"><br>
+          <a href="tel:+48502395459" target="_blank">
             <img decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/phone_icon_3-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/phone_icon_3-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/phone_icon_3-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/phone_icon_3.png 300w" sizes="(max-width: 150px) 100vw, 150px">
           </a>
         </p>
@@ -125,13 +146,16 @@
           <img loading="lazy" decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/car_icon_2-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/car_icon_2-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/car_icon_2-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/car_icon_2.png 300w" sizes="(max-width: 150px) 100vw, 150px">
         </p>
         <p>Odeślemy otoczki</p>
+      </div>  
+      <div>  
         <p>
           <img loading="lazy" decoding="async" width="150" height="150" src="https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon-150x150.png" alt="" srcset="https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon-150x150.png 150w, https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon-100x100.png 100w, https://keram.biz/wp-content/uploads/2023/03/shake_hands_icon.png 300w" sizes="(max-width: 150px) 100vw, 150px">
         </p>
-        <p>Satysfakcja na&nbsp;100% wschodów</p>
+        <p>Satysfakcja gwarantowana</p>
       </div>
     </div>
-    <h2>O&nbsp;nas</h2>
+    <div class="tekst-gl">
+      <h2>O&nbsp;nas</h2>
       <p>Spółka KERAM zajmuje się kondycjonowaniem, uszlachetnianiem oraz&nbsp;<strong>otoczkowaniem nasion</strong> roślin warzywnych i&nbsp;kwiatów od&nbsp;1988 roku. Wiele lat badań i&nbsp;doświadczeń laboratoryjnych doprowadziło nas do&nbsp;stworzenia unikalnej technologii otoczkowania nasion. Otoczkowanie nasion pozwala na&nbsp;bardziej ekonomiczne wykorzystanie materiału siewnego oraz&nbsp;ogranicza niekorzystny wpływ środowiska na&nbsp;kiełkujące rośliny. Celem naszej produkcji jest otrzymanie nasion dających wyższe plony o&nbsp;lepszej jakości.</p>
       <p>
         <a href="https://keram.biz/o-nas/">
@@ -194,6 +218,7 @@
       <p>
         <img decoding="async" src="https://keram.biz/wp-content/uploads/2023/04/kielki_06-e1681817794345.jpg" title="kielki_06" alt="kielki_06" loading="lazy">
       </p>
+    </div>
   </div>
 
   <footer>
